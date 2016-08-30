@@ -1,0 +1,10 @@
+-   id: 1
+    image: carrot.jpg
+    name: Mrkev
+    slug: mrkev
+    desc: Mrkev je dobrá a zdravá.
+-   id: 2
+    image: apple.jpg
+    name: Jablko
+    slug: jablko
+    desc: Jablka jsou červená a kulatá.

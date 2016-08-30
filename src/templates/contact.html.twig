@@ -1,0 +1,40 @@
+{% extends '_layouts/base.html.twig' %}
+
+{% block content %}
+    {{ form.contact.flash_message }}
+    Kontakt:
+    <form method="post">
+        <input type="hidden" name="contact[csrf_token]" value="{{ form.contact.data.csrf_token }}"/>
+        <div>
+            {% if form.contact.errors['email'] is defined %}
+                <ul>
+                {% for error in form.contact.errors['email'] %}
+                    <li>{{ error.message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+            Email: <input type="text" name="contact[email]" />
+        </div>
+        <div>
+            {% if form.contact.errors['name'] is defined %}
+                <ul>
+                    {% for error in form.contact.errors['name'] %}
+                        <li>{{ error.message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            Name: <input type="text" name="contact[name]" />
+        <div>
+        </div>
+            {% if form.contact.errors['message'] is defined %}
+                <ul>
+                    {% for error in form.contact.errors['message'] %}
+                        <li>{{ error.message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            Message: <input type="text" name="contact[message]" />
+        </div>
+        <input type="submit" value="Odeslat"/>
+    </form>
+{% endblock %}

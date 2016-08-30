@@ -1,0 +1,12 @@
+{% extends '_layouts/base.html.twig' %}
+
+{% set prod = '' %}
+{% for product in data.products if product.slug == url_params.product_slug %}
+    {% set prod = product %}
+{% endfor %}
+
+{% block content %}
+    {{ prod.name }}<br />
+    {{ prod.desc }}<br />
+    <img src="{{ image('images/' ~ prod.image) }}" />
+{% endblock %}

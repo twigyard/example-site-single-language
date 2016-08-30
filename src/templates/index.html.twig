@@ -1,0 +1,9 @@
+{% extends '_layouts/base.html.twig' %}
+
+{% block content %}
+    <ul>
+        {% for product in data.products %}
+           <li><a href="{{ path('product', { 'product_slug': product.slug }) }}">{{ product.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
