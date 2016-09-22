@@ -9,7 +9,7 @@
             {% if form.contact.errors['email'] is defined %}
                 <ul>
                 {% for error in form.contact.errors['email'] %}
-                    <li>{{ error.message }}</li>
+                    <li>{{ error }}</li>
                 {% endfor %}
                 </ul>
             {% endif %}
@@ -19,7 +19,7 @@
             {% if form.contact.errors['name'] is defined %}
                 <ul>
                     {% for error in form.contact.errors['name'] %}
-                        <li>{{ error.message }}</li>
+                        <li>{{ error }}</li>
                     {% endfor %}
                 </ul>
             {% endif %}
@@ -29,7 +29,7 @@
             {% if form.contact.errors['message'] is defined %}
                 <ul>
                     {% for error in form.contact.errors['message'] %}
-                        <li>{{ error.message }}</li>
+                        <li>{{ error }}</li>
                     {% endfor %}
                 </ul>
             {% endif %}
