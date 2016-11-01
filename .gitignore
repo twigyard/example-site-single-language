@@ -1,2 +1,5 @@
 /web/image_cache
 /var/cache/*
+/var/log/*
+
+!.gitkeep
