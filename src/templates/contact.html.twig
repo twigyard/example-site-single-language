@@ -1,40 +1,43 @@
 {% extends '_layouts/base.html.twig' %}
 
 {% block content %}
-    {{ form.contact.flash_message }}
-    Kontakt:
+    <h2>Contact</h2>
+    <p><strong>{{ form.contact.flash_message }}</strong></p>
     <form method="post">
         <input type="hidden" name="contact[csrf_token]" value="{{ form.contact.data.csrf_token }}"/>
         <div>
+            <label for="email">E-mail: </label>
+            <input type="text" id="email" name="contact[email]" />
             {% if form.contact.errors['email'] is defined %}
-                <ul>
-                {% for error in form.contact.errors['email'] %}
-                    <li>{{ error }}</li>
-                {% endfor %}
+                <ul class="error">
+                    {% for error in form.contact.errors['email'] %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
                 </ul>
             {% endif %}
-            Email: <input type="text" name="contact[email]" />
         </div>
         <div>
+            <label for="name">Name: </label>
+            <input type="text" id="name" name="contact[name]" />
             {% if form.contact.errors['name'] is defined %}
-                <ul>
+                <ul class="error">
                     {% for error in form.contact.errors['name'] %}
                         <li>{{ error }}</li>
                     {% endfor %}
                 </ul>
             {% endif %}
-            Name: <input type="text" name="contact[name]" />
         <div>
         </div>
+            <label for="message">Message: </label>
+            <input type="text" id="message" name="contact[message]" />
             {% if form.contact.errors['message'] is defined %}
-                <ul>
+                <ul class="error">
                     {% for error in form.contact.errors['message'] %}
                         <li>{{ error }}</li>
                     {% endfor %}
                 </ul>
             {% endif %}
-            Message: <input type="text" name="contact[message]" />
         </div>
-        <input type="submit" value="Odeslat"/>
+        <button type="submit">Send</button>
     </form>
 {% endblock %}

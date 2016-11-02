@@ -6,7 +6,7 @@
 {% endfor %}
 
 {% block content %}
-    {{ prod.name }}<br />
-    {{ prod.desc }}<br />
+    <h2>{{ prod.name }}</h2>
+    <p>{{ prod.desc }}</p>
     <img src="{{ image('images/' ~ prod.image) }}" />
 {% endblock %}

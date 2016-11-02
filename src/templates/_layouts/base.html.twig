@@ -1,7 +1,32 @@
-<h5>Stránky</h5>
-<a href="{{ path('index') }}">Domů</a>
-<a href="{{ path('contact') }}">Kontakt:</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TwigYard Example</title>
 
-<hr>
-
-{% block content %}{% endblock %}
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}" type="text/css" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="{{ path('index') }}">Example</a></h1>
+            <nav>
+                <ul>
+                    <li{% if page == 'index' %} class="active"{% endif %}><a href="{{ path('index') }}">Home</a></li>
+                    <li{% if page == 'contact' %} class="active"{% endif %}><a href="{{ path('contact') }}">Contact</a>/li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="container">
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+    </section>
+    <footer class="container">
+        <div class="footer">
+            <a href="http://docs.twigyard.com/" target="_blank">TwigYard</a>
+        </div>
+    </footer>
+</body>
+</html>

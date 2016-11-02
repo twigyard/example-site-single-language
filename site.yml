@@ -6,14 +6,14 @@ httpauth:
     username: user
     password: pass
 
-locale: cs_CZ
+locale: en_US
 
 data:
     products: products.yml
 
 form:
     contact:
-        success_flash_message: Děkujeme za Vaší zprávu.
+        success_flash_message: Thank you for your message.
         handlers:
             -   type: email
                 from:
@@ -39,11 +39,11 @@ form:
 
 router:
     index: /
-    product: /zbozi/{product_slug | products:slug}
-    contact: /kontakt
+    product: /products/{product_slug | products:slug}
+    contact: /contact
 
 redirect:
-    /test/url1: /zbozi/mrkev
+    /test/url1: /products/carrot
 
 renderer:
     index: index.html.twig
