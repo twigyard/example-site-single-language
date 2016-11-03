@@ -29,7 +29,7 @@
         <div>
         </div>
             <label for="message">Message: </label>
-            <input type="text" id="message" name="contact[message]" />
+            <textarea id="message" name="contact[message]" rows="3"></textarea>
             {% if form.contact.errors['message'] is defined %}
                 <ul class="error">
                     {% for error in form.contact.errors['message'] %}
