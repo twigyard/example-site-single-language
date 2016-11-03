@@ -1,0 +1,154 @@
+body {
+    background: #F5F4EF;
+    color: #000305;
+    font-size: 14px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+h1 {
+    font-size: 3.5em;
+    line-height: 1;
+}
+
+h1 a:link,
+h1 a:visited {
+    color: #000305;
+    display: block;
+    font-weight: bold;
+    margin: 0 0 .6em .2em;
+    text-decoration: none;
+}
+
+h1 a:hover,
+h1 a:active {
+    color: #fa4616;
+    background-color: transparent;
+}
+
+h2 {
+    font-size: 1.3em;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-top: 0;
+    margin-bottom: .8em;
+}
+
+a:link,
+a:visited {
+    color: #fa4616;
+    text-decoration: underline;
+}
+
+a:hover,
+a:active {
+    background-color: #fa4616;
+    color: #fff;
+    text-decoration: none;
+}
+
+.container {
+    clear: both;
+    margin: 0 auto;
+    max-width: 800px;
+    overflow: auto;
+}
+
+header {
+    margin: 0 auto;
+    padding: 2.5em 0 0 0;
+}
+
+header nav {
+    background: #000305;
+    font-size: 1.1em;
+    height: 40px;
+    line-height: 30px;
+    margin: 0 auto 2em auto;
+    padding: 0;
+    border-radius: 5px;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+header nav li {
+    float: left;
+    display: inline;
+    margin: 0;
+}
+
+header nav a:link,
+header nav a:visited {
+    color: #fff;
+    display: inline-block;
+    height: 30px;
+    padding: 5px 1.5em;
+    text-decoration: none;
+}
+header nav a:hover,
+header nav a:active,
+header nav .active a:link,
+header nav .active a:visited {
+    background: #fa4616;
+    color: #fff;
+}
+
+header nav li:first-child a {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.content {
+    background: #fff;
+    margin-bottom: 2em;
+    overflow: hidden;
+    padding: 20px;
+}
+
+footer {
+    text-align: right;
+}
+
+.footer {
+    padding: 10px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+button {
+    width: 100%;
+    background-color: #4CAF50;
+    font-size: 1em;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.error {
+    color: #C74451;
+}
