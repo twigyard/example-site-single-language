@@ -7,7 +7,7 @@
         <input type="hidden" name="contact[csrf_token]" value="{{ form.contact.data.csrf_token }}"/>
         <div>
             <label for="email">E-mail: </label>
-            <input type="text" id="email" name="contact[email]" />
+            <input type="text" id="email" name="contact[email]" value="{{ form.contact.data.email }}" />
             {% if form.contact.errors['email'] is defined %}
                 <ul class="error">
                     {% for error in form.contact.errors['email'] %}
@@ -18,7 +18,7 @@
         </div>
         <div>
             <label for="name">Name: </label>
-            <input type="text" id="name" name="contact[name]" />
+            <input type="text" id="name" name="contact[name]" value="{{ form.contact.data.name }}" />
             {% if form.contact.errors['name'] is defined %}
                 <ul class="error">
                     {% for error in form.contact.errors['name'] %}
@@ -29,7 +29,7 @@
         <div>
         </div>
             <label for="message">Message: </label>
-            <textarea id="message" name="contact[message]" rows="3"></textarea>
+            <textarea id="message" name="contact[message]" rows="3">{{ form.contact.data.message }}</textarea>
             {% if form.contact.errors['message'] is defined %}
                 <ul class="error">
                     {% for error in form.contact.errors['message'] %}
