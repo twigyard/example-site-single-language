@@ -92,6 +92,7 @@ header nav a:visited {
     padding: 5px 1.5em;
     text-decoration: none;
 }
+
 header nav a:hover,
 header nav a:active,
 header nav .active a:link,
