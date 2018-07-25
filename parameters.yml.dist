@@ -1,0 +1,6 @@
+parameters:
+    mailer_smtp_host: mail
+    mailer_smtp_port: 1025
+    mailer_smtp_encryption: ~
+    mailer_smtp_username: ~
+    mailer_smtp_password: ~

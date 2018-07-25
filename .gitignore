@@ -1,5 +1,6 @@
-/web/image_cache
+/parameters.yml
 /var/cache/*
 /var/log/*
+/web/image_cache
 
 !.gitkeep

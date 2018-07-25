@@ -1,51 +1,65 @@
-url:
-    canonical: example-site-single-language
-    extra: []
+version: 2
 
-httpauth:
-    username: user
-    password: pass
+components:
+    mailer:
+        smtp_host: "%mailer_smtp_host%"
+        smtp_port: "%mailer_smtp_port%"
+        smtp_encryption: "%mailer_smtp_encryption%"
+        smtp_username: "%mailer_smtp_username%"
+        smtp_password: "%mailer_smtp_password%"
 
-locale: en_US
+middlewares:
+    url:
+        canonical: example-site-single-language
+        extra: []
 
-data:
-    products: products.yml
+    httpauth:
+        username: user
+        password: pass
 
-form:
-    contact:
-        success_flash_message: Thank you for your message.
-        handlers:
-            -   type: email
-                from:
-                    name: MCS example-2 site
-                    address: example-2@mcs.com
-                recipients:
-                    to: [ test.1@visionapps.cz ]
-                    bcc: [ test.2@visionapps.cz ]
-                templates:
-                    subject: email/subject.html.twig
-                    body: email/body.html.twig
-            -   type: log
-                file: form.log
-        fields:
-            name:
-                - NotBlank: ~
-            email:
-                - NotBlank: ~
-                - Email:
-                    checkMX: true
-            message:
-                - NotBlank: ~
+    locale: en_US
 
-router:
-    index: /
-    product: /products/{product_slug | products:slug}
-    contact: /contact
+    data:
+        products: products.yml
 
-redirect:
-    /test/url1: /products/carrot
+    form:
+        contact:
+            success_flash_message: Thank you for your message.
+            handlers:
+                -   type: email
+                    from:
+                        name: MCS example-2 site
+                        address: example-2@mcs.com
+                    recipients:
+                        to: [ test.1@visionapps.cz ]
+                        bcc: [ test.2@visionapps.cz ]
+                    templates:
+                        subject: email/subject.html.twig
+                        body: email/body.html.twig
+                -   type: log
+                    file: form.log
+            fields:
+                name:
+                    - NotBlank: ~
+                email:
+                    - NotBlank: ~
+                    - Email:
+                        checkMX: true
+                message:
+                    - NotBlank: ~
 
-renderer:
-    index: index.html.twig
-    product: product.html.twig
-    contact: contact.html.twig
+    router:
+        index: /
+        product: /products/{product_slug | products:slug}
+        contact: /contact
+
+    redirect:
+        /test/url1: /products/carrot
+
+    renderer:
+        index: index.html.twig
+        product: product.html.twig
+        contact: contact.html.twig
+
+imports:
+    - { resource: parameters.yml }
