@@ -2,6 +2,7 @@ version: 2
 
 components:
     mailer:
+        debug_email: "%debug_email%"
         smtp_host: "%mailer_smtp_host%"
         smtp_port: "%mailer_smtp_port%"
         smtp_encryption: "%mailer_smtp_encryption%"

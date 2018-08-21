@@ -1,4 +1,5 @@
 parameters:
+    debug_email: ~
     mailer_smtp_host: mail
     mailer_smtp_port: 1025
     mailer_smtp_encryption: ~
