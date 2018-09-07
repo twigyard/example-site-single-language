@@ -1,0 +1,8 @@
+middlewares:
+    httpauth:
+        username: user
+        password: pass
+
+imports:
+    - { resource: 'site.yml' }
+
